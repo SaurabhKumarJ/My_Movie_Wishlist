@@ -43,7 +43,7 @@ function App() {
             path="/"
             element={
               <>
-                <Banner/>
+                <Banner watchlist={watchlist}/>
                 <Movies
                   watchlist={watchlist}
                   handleAddtoWatchlist={hansdleAddtoWatchlist}
