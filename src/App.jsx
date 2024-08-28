@@ -11,7 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   let [watchlist, setWatchlist] = useState([]);
 
-  let hansdleAddtoWatchlist = (movieObj) => {
+  let handleAddtoWatchlist = (movieObj) => {
     let newWatchlist = [...watchlist, movieObj];
     localStorage.setItem("moviesApp", JSON.stringify(newWatchlist));
     setWatchlist(newWatchlist);
@@ -36,6 +36,7 @@ function App() {
   }, []);
   return (
     <>
+    <div className="bg-gradient-to-bl from-rose-100 to-teal-100">
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -46,7 +47,7 @@ function App() {
                 <Banner watchlist={watchlist}/>
                 <Movies
                   watchlist={watchlist}
-                  handleAddtoWatchlist={hansdleAddtoWatchlist}
+                  handleAddtoWatchlist={handleAddtoWatchlist}
                   handleRemoveFromWatchlist={handleRemoveFromWatchlist}
                 />
               </>
@@ -67,6 +68,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
+      </div>
     </>
   );
 }

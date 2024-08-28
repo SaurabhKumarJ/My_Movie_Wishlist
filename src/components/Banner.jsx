@@ -1,7 +1,7 @@
 import React from 'react';
 function Banner({ watchlist }) {
-  let posterPath = 'src/assets/movie.jpg'; // Set default image initially
-  let movieTitle = 'Shawshank Redemption';
+  let posterPath = '/src/assets/movie.jpg'; // Set default image initially
+  let movieTitle = 'Movie Wishlist';
 
   watchlist.forEach((movie) => {
     if (movie.poster_path) {
@@ -12,7 +12,7 @@ function Banner({ watchlist }) {
 
   return (
     <div
-      className='h-[20vh] md:h-[75vh] bg-cover bg-center flex items-end'
+      className='h-[20vh] md:h-[75vh] bg-cover bg-right-top flex items-end'
       style={{ backgroundImage: `url(${posterPath})` }}
     >
       <div className='text-white font-palanquin text-xl text-center w-full bg-gray-900/60 p-4'>

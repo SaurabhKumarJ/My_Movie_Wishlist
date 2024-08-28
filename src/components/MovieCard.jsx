@@ -1,5 +1,7 @@
 import React from "react";
 
+
+import {Heart, Plus } from "lucide-react";
 function MovieCard({
   movieObj,
   watchlist,
@@ -16,9 +18,16 @@ function MovieCard({
     }
     return false;
   }
+  function truncateString(str) {
+    if (str.length > 15) {
+      return str.substring(0, 15)+"...";
+    }
+    return str;
+  }
+
   return (
     <div
-      className="h-[40vh] w-[11vw] bg-cover bg-center rounded-xl hover:cursor-pointer duration-300 hover:scale-110 flex flex-col justify-between items-end"
+      className="h-[20vh] lg:h-[40vh] w-[100px] lg:w-[11vw] bg-cover bg-center rounded-xl hover:cursor-pointer duration-300 hover:scale-110 flex flex-col justify-between items-end"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${posterPath})`,
       }}
@@ -26,20 +35,20 @@ function MovieCard({
       {doesContain(movieObj) ? (
         <div
           onClick={() => handleRemoveFromWatchlist(movieObj)}
-          className="m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-gray-900/60"
+          className="m-4 flex justify-center h-8 w-8 items-center rounded-full bg-gray-900"
         >
-          &#10060;
+          <Heart color="#ffffff" fill="red" strokeWidth={0}/>
         </div>
       ) : (
         <div
           onClick={() => handleAddtoWatchlist(movieObj)}
-          className="m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-gray-900/60"
+          className="m-4 flex justify-center h-8 w-8 items-center rounded-full bg-gray-900"
         >
-          &#128525;
+          <Plus color="#ffffff" className="hover:bg-gray-600 hover:w-8 hover:h-8 hover:rounded-full"/>
         </div>
       )}
       <div className="text-white text-xl w-full p-2 bg-gray-900/60 text-center rounded-b-xl">
-        {name}
+        {truncateString(name)}
       </div>
     </div>
   );

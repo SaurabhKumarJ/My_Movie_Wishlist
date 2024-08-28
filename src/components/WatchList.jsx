@@ -47,8 +47,8 @@ function WatchList({ watchlist, setWatchlist, handleRemoveFromWatchlist}) {
               onClick={() => handleFilter(genre)}
               className={
                 currGenre == genre
-                  ? "flex text-white justify-center font-montserrat rounded-xl bg-blue-400 px-4 py-2 mx-1"
-                  : "flex text-white justify-center font-montserrat rounded-xl bg-gray-400 px-4 py-2 mx-1"
+                  ? "flex text-white justify-center hover:cursor-pointer font-montserrat rounded-xl bg-blue-400 px-4 py-2 mx-1"
+                  : "flex text-white justify-center hover:cursor-pointer font-montserrat rounded-xl bg-gray-400 px-4 py-2 mx-1"
               }
             >
               {genre}
@@ -61,7 +61,7 @@ function WatchList({ watchlist, setWatchlist, handleRemoveFromWatchlist}) {
           onChange={handleSearch}
           value={search}
           placeholder="Search Movies"
-          className="px-4 py-2 font-montserrat rounded-md h-[2rem] w-[18rem] outline-none bg-gray-200"
+          className="px-4 py-2 font-montserrat rounded-md h-[2rem] w-[18rem] outline-none bg-gray-300"
           type="text"
         />
       </div>
@@ -72,11 +72,11 @@ function WatchList({ watchlist, setWatchlist, handleRemoveFromWatchlist}) {
               <th>Detail</th>
               <div className="flex justify-center">
                 <div onClick={sortIncreasing} className="px-2">
-                  <i class="fa-solid fa-arrow-up"></i>
+                  <i class="fa-solid hover:cursor-pointer fa-arrow-up"></i>
                 </div>
                 <th>Rating</th>
                 <div onClick={sortDecreasing} className="px-2">
-                  <i class="fa-solid fa-arrow-down"></i>
+                  <i class="fa-solid hover:cursor-pointer fa-arrow-down"></i>
                 </div>
               </div>
               <th>Popularity</th>
@@ -111,7 +111,7 @@ function WatchList({ watchlist, setWatchlist, handleRemoveFromWatchlist}) {
                     <td>{movieObj.popularity}</td>
                     <td>{genreIds[movieObj.genre_ids[0]]}</td>
 
-                    <td onClick={()=>handleRemoveFromWatchlist(movieObj)} className="text-red-800">Delete</td>
+                    <td onClick={()=>handleRemoveFromWatchlist(movieObj)} className="text-red-800 hover:cursor-pointer">Delete</td>
                   </tr>
                 );
               })}
