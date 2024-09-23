@@ -1,6 +1,6 @@
 import React from 'react';
 function Banner({ watchlist }) {
-  let posterPath = '/src/assets/movie.jpg'; // Set default image initially
+  let posterPath = 'https://github.com/SaurabhKumarJ/My_Movie_Wishlist/blob/master/src/assets/movie.jpg'; // Set default image initially
   let movieTitle = 'Movie Wishlist';
 
   watchlist.forEach((movie) => {
